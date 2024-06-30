@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Student record </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       <h1>Student Records</h1>
+       <hr>
+       {% if datav %}
+       <table>
+          <tr>
+            <th>SNO</th>
+            <th>SNAME</th>
+            <th>SROLL</th>
+            <th>EMAIL</th>
+            <th>DOB</th>
+            <th>MARK</th>
+            <th>PHONE</th>
+            <th>ADDRESS</th>
+          </tr>
+          {% for i in datav %}
+          <tr>
+            <td>{{i.sno}}</td>
+            <td>{{i.sname}}</td>
+            <td>{{i.sroll}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.mark}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.address}}</td>
+          </tr>
+          {% endfor %}
+       </table>
+       {% else %}
+       <p>Records not found!!</p>
+       {% endif %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
